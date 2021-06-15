@@ -32,7 +32,7 @@ function computerPlay() {
  *
  * @param {string} playerSelection - The shape the player chooses to play.
  * @param {string} computerSelection - The shape the computer chooses to play.
- * @returns {string} A message describing the winner of this round.
+ * @returns {string} The constant WIN, LOSE, or TIE that reflects the player's result.
  */
 function playRound(playerSelection, computerSelection) {
     let result;
@@ -58,14 +58,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
-    // Generate result message
-    if (result === WIN) {
-        return `You win! ${capitalize(playerSelection)} beats ${computerSelection}.`;
-    } else if (result === LOSE) {
-        return `You lose! ${capitalize(computerSelection)} beats ${playerSelection}.`;
-    } else {
-        return `It's a tie! You and the computer both chose ${playerSelection}.`;
-    }
+    return result;
 }
 
 /**
@@ -77,3 +70,51 @@ function playRound(playerSelection, computerSelection) {
 function capitalize(string) {
     return string[0].toUpperCase() + string.slice(1);
 }
+
+/**
+ * Plays a game of rock paper scissors using prompts and the console. Plays a
+ * predetermined number of rounds, printing messages in the console for the
+ * player.
+ */
+function game() {
+    const numRounds = 5; // Number of rounds to play
+    let playerScore = 0;
+    let computerScore = 0;
+
+    console.log(`Time to play rock, paper, scissors! Number of rounds to play is set to: ${numRounds}.`);
+
+    for (let i = 0; i < numRounds; i++) {
+        let playerSelection = prompt('Pick a shape: [rock], [paper], or [scissors].');
+        let computerSelection = computerPlay();
+        let result = playRound(playerSelection, computerSelection);
+
+        // Generate result message
+        if (result === WIN) {
+            console.log(`You win! ${capitalize(playerSelection)} beats ${computerSelection}.`);
+            playerScore++;
+        } else if (result === LOSE) {
+            console.log(`You lose! ${capitalize(computerSelection)} beats ${playerSelection}.`);
+            computerScore++;
+        } else {
+            console.log(`It's a tie! You and the computer both chose ${playerSelection}.`);
+        }
+
+        console.log(`Your score: ${playerScore}. Computer's score: ${computerScore}.`);
+    }
+
+    if (playerScore > computerScore) {
+        console.log(`Congratulations, you won!`);
+    } else if (playerScore < computerScore) {
+        console.log(`Oh no, you lost!`);
+    } else {
+        console.log(`You tied with the computer! You're both winners this time!`);
+    }
+
+    console.log(`Final scores:`);
+    console.log(`Your score: ${playerScore}. Computer's score: ${computerScore}.`);
+}
+
+
+// Start game
+const startGame = document.getElementById('start-game');
+startGame.addEventListener('click', game);
