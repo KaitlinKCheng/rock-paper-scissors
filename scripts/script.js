@@ -85,21 +85,27 @@ function game() {
 
     for (let i = 0; i < numRounds; i++) {
         let playerSelection = prompt('Pick a shape: [rock], [paper], or [scissors].');
-        let computerSelection = computerPlay();
-        let result = playRound(playerSelection, computerSelection);
 
-        // Generate result message
-        if (result === WIN) {
-            console.log(`You win! ${capitalize(playerSelection)} beats ${computerSelection}.`);
-            playerScore++;
-        } else if (result === LOSE) {
-            console.log(`You lose! ${capitalize(computerSelection)} beats ${playerSelection}.`);
-            computerScore++;
+        if (playerSelection === null) {
+            console.log(`Stopping the game...`);
+            break;
         } else {
-            console.log(`It's a tie! You and the computer both chose ${playerSelection}.`);
-        }
+            let computerSelection = computerPlay();
+            let result = playRound(playerSelection, computerSelection);
 
-        console.log(`Your score: ${playerScore}. Computer's score: ${computerScore}.`);
+            // Generate result message
+            if (result === WIN) {
+                console.log(`You win! ${capitalize(playerSelection)} beats ${computerSelection}.`);
+                playerScore++;
+            } else if (result === LOSE) {
+                console.log(`You lose! ${capitalize(computerSelection)} beats ${playerSelection}.`);
+                computerScore++;
+            } else {
+                console.log(`It's a tie! You and the computer both chose ${playerSelection}.`);
+            }
+
+            console.log(`Your score: ${playerScore}. Computer's score: ${computerScore}.`);
+        }
     }
 
     if (playerScore > computerScore) {
