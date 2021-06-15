@@ -1,2 +1,5 @@
-# rock-paper-scissors
-Rock paper scissors game for The Odin Project.
+# Rock Paper Scissors
+A project from [The Odin Project's curriculum](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors).
+
+## Version 1
+A simple rock paper scissors game played in the console against a computer.
