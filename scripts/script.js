@@ -87,7 +87,7 @@ function game() {
         let playerSelection = prompt('Pick a shape: [rock], [paper], or [scissors].');
 
         if (playerSelection === null) {
-            console.log(`Stopping the game...`);
+            console.log('Stopping the game...');
             break;
         } else {
             let computerSelection = computerPlay();
@@ -109,14 +109,14 @@ function game() {
     }
 
     if (playerScore > computerScore) {
-        console.log(`Congratulations, you won!`);
+        console.log('Congratulations, you won!');
     } else if (playerScore < computerScore) {
-        console.log(`Oh no, you lost!`);
+        console.log('Oh no, you lost!');
     } else {
-        console.log(`You tied with the computer! You're both winners this time!`);
+        console.log('You tied with the computer! You\'re both winners this time!');
     }
 
-    console.log(`Final scores:`);
+    console.log('Final scores:');
     console.log(`Your score: ${playerScore}. Computer's score: ${computerScore}.`);
 }
 
