@@ -1,3 +1,8 @@
+// Possible shapes to play
+const ROCK = 'rock';
+const PAPER = 'paper';
+const SCISSORS = 'scissors';
+
 /**
  * Generates a random shape for the computer to play.
  *
@@ -7,10 +12,10 @@
     let randomShape = Math.floor(Math.random() * 3) + 1;
 
     if (randomShape === 1) {
-        return 'rock';
+        return ROCK;
     } else if (randomShape === 2) {
-        return 'paper';
+        return PAPER;
     } else {
-        return 'scissors';
+        return SCISSORS;
     }
 }
