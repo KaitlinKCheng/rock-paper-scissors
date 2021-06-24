@@ -3,13 +3,46 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors with CatBot</title>
+    <link href="./styles/rinse.css" rel="stylesheet">
+    <link href="./styles/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <p>Open the console first. Then, click the start button to begin the game!</p>
-    <button id="start-game">Start</button>
-    <script src="scripts/script.js"></script>
+    <main>
+        <!-- INTRO -->
+        <div id="intro" class="outer-container column">
+            <h1 id="title">Rock Paper Scissors!</h1>
+            <p id="desc">
+                CatBot is bored and wants to play!
+                <br>
+                Entertain it by playing rock paper scissors to a score of 5.
+            </p>
+        </div>
+        <!-- CATBOT -->
+        <div id="catbot" class="outer-container column">
+            <img id="catbot-img" src="images/catbot-colour.png" alt="An icon of CatBot">
+            <p id="catbot-shape" class="choice"></p>
+        </div>
+        <!-- STATS -->
+        <div id="stats" class="outer-container column">
+            <p id="result-text"></p>
+            <p id="scores-text"></p>
+        </div>
+        <!-- PLAYER -->
+        <div id="player" class="outer-container column">
+            <p id="player-shape" class="choice"></p>
+            <div id="shapes" class="container row">
+                <button id="rock-btn" class="shape-btn">ROCK</button>
+                <button id="paper-btn" class="shape-btn">PAPER</button>
+                <button id="scissors-btn" class="shape-btn">SCISSORS</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Created by KC</p>
+    </footer>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
