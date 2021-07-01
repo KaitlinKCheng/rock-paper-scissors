@@ -1,0 +1,191 @@
+:root {
+    /* Colours */
+    --main-orange: #f8d5b7;
+    --win: #a5eba5;
+    --lose: #eba5a5;
+    --tie: #ebe1a5;
+    --greyed-out: #a9b0c0;
+
+    /* Fonts */
+    --main-font: Verdana, Tahoma, sans-serif;
+    --title-font: 'Lucida Console', Courier, monospace;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1.1rem;
+    font-family: var(--main-font);
+    text-align: center;
+}
+
+main {
+    /* min-height: 100vh; */
+    margin-bottom: 50px;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 1rem;
+    font-style: italic;
+    border-top: black solid 2px;
+    background-color: var(--main-orange);
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 1rem;
+    }
+}
+
+
+/* General Classes */
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.outer-container {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.choice {
+    width: 175px;
+    height: 75px;
+    margin: 30px auto;
+    padding: 15px;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    border: black solid 3px;
+    background-color: var(--greyed-out);
+}
+
+@media (max-width: 500px) {
+    .outer-container {
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .choice {
+        width: 150px;
+        height: 50px;
+        margin: 20px auto;
+        padding: 8px;
+        font-size: 1.4rem;
+    }
+}
+
+
+/***** INTRO *****/
+
+#intro {
+    margin-bottom: 30px;
+    border-bottom: black solid 2px;
+    background-color: var(--main-orange);
+}
+
+#title {
+    font-size: 2.5rem;
+    font-family: var(--title-font);
+}
+
+#desc {
+    padding: 10px 0;
+}
+
+
+/***** CATBOT *****/
+
+#catbot-img {
+    width: 125px;
+    margin: auto;
+    padding: 20px;
+    border-top: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+
+/***** STATS *****/
+
+#stats {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+    border-top: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+
+
+/***** PLAYER *****/
+
+#shapes {
+    justify-content: center;
+    width: 50%;
+    margin: 10px auto;
+}
+
+.shape-btn {
+    width: 150px;
+    height: 50px;
+    margin: auto 20px;
+    font-size: 1.3rem;
+    border: black solid 3px;
+    background-color: var(--main-orange);
+    transition: transform .005s;
+}
+
+.shape-btn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 500px) {
+    #shapes {
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .shape-btn {
+        width: 110px;
+        height: 40px;
+        margin: 10px auto;
+        font-size: 1.1rem;
+    }
+}
+
+
+/* JS Classes */
+.win {
+    background-color: var(--win);
+}
+
+.lose {
+    background-color: var(--lose);
+}
+
+.tie {
+    background-color: var(--tie);
+}
+
+.game-over {
+    background-color: var(--greyed-out);
+    transition: none;
+}
+
+.game-over:hover {
+    cursor: default;
+    background-color: var(--greyed-out);
+    transform: none;
+}
