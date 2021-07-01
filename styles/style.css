@@ -9,6 +9,11 @@
     /* Fonts */
     --main-font: Verdana, Tahoma, sans-serif;
     --title-font: 'Lucida Console', Courier, monospace;
+
+    /* Borders */
+    --thin-border: #000 solid 1px;
+    --plain-border: #000 solid 2px;
+    --thick-border: #000 solid 3px;
 }
 
 html {
@@ -22,18 +27,18 @@ body {
 }
 
 main {
-    /* min-height: 100vh; */
     margin-bottom: 50px;
 }
 
 footer {
     bottom: 0;
-    width: 100%;
-    padding: 20px 0;
+    width: 250px;
+    margin: 10px auto;
+    padding: 15px 0;
     font-size: 1rem;
     font-style: italic;
-    border-top: black solid 2px;
-    background-color: var(--main-orange);
+    border-top: var(--thin-border);
+    border-bottom: var(--thin-border);
 }
 
 @media (max-width: 500px) {
@@ -67,7 +72,7 @@ footer {
     padding: 15px;
     font-size: 1.6rem;
     text-transform: uppercase;
-    border: black solid 3px;
+    border: var(--thick-border);
     background-color: var(--greyed-out);
 }
 
@@ -81,7 +86,7 @@ footer {
         width: 150px;
         height: 50px;
         margin: 20px auto;
-        padding: 8px;
+        padding: 6px;
         font-size: 1.4rem;
     }
 }
@@ -91,7 +96,7 @@ footer {
 
 #intro {
     margin-bottom: 30px;
-    border-bottom: black solid 2px;
+    border-bottom: var(--plain-border);
     background-color: var(--main-orange);
 }
 
@@ -111,8 +116,8 @@ footer {
     width: 125px;
     margin: auto;
     padding: 20px;
-    border-top: black solid 2px;
-    border-bottom: black solid 2px;
+    border-top: var(--plain-border);
+    border-bottom: var(--plain-border);
 }
 
 
@@ -122,10 +127,9 @@ footer {
     width: 80%;
     margin: auto;
     padding: 20px 0;
-    border-top: black solid 2px;
-    border-bottom: black solid 2px;
+    border-top: var(--plain-border);
+    border-bottom: var(--plain-border);
 }
-
 
 
 /***** PLAYER *****/
@@ -141,7 +145,7 @@ footer {
     height: 50px;
     margin: auto 20px;
     font-size: 1.3rem;
-    border: black solid 3px;
+    border: var(--thick-border);
     background-color: var(--main-orange);
     transition: transform .005s;
 }
@@ -167,6 +171,7 @@ footer {
 
 
 /* JS Classes */
+
 .win {
     background-color: var(--win);
 }
