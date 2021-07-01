@@ -176,11 +176,9 @@ function endGame() {
         });
 
         if (playerScore === playTo) {
-            resultText.textContent = 'Game over! You beat CatBot.'
-                    + ' Even though it lost, CatBot enjoyed the game very much.';
+            resultText.textContent = 'Game over! You beat CatBot.';
         } else {
-            resultText.textContent = 'Game over! CatBot won this time.'
-                    + ' It does a victory dance and thanks you for playing.';
+            resultText.textContent = 'Game over! CatBot won this time.';
         }
 
         resultText.textContent += ' Refresh the page to play again!';
