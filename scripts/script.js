@@ -50,7 +50,7 @@ function setup() {
  * then compares it to the computer's to check for a winner. Updates the results
  * accordingly.
  *
- * @param {Event} e - The event that occured.
+ * @param {Event} e - The event that occurred.
  */
 function playRound(e) {
     let playerSelection = playerPlay(e.target);
